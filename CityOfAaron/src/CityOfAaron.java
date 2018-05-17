@@ -8,6 +8,9 @@ import model.Game;
 import model.Player;
 import model.Storehouse;
 import model.Map;
+import model.Point;
+import model.Location;
+
 /**
  *
  * @author cfull
@@ -19,6 +22,7 @@ public class CityOfAaron {
      */
     public static void main(String[] args) {
         
+        //Test the Game class.
         Game theGame = new Game();
         theGame.setThePlayer(new Player());
         theGame.setTheStorehouse(new Storehouse());
@@ -29,6 +33,21 @@ public class CityOfAaron {
         theGame.setCurrentYear(0);
         
         System.out.println(theGame.toString());
+        
+        //Test the Map class.
+        Map theMap = new Map();
+        theMap.setCurrentLocation(new Point());
+        
+        //Test the Point class.
+        Point thePoint = new Point();
+        thePoint.setColumn(2);
+        thePoint.setRow(4);
+        
+        //Test the Location class.
+        Location theLocation = new Location();
+        theLocation.setDescription("Description for map location.");
+        theLocation.setGameTips(args);
+        theLocation.setMapSymbol("$");
+        theLocation.setName("Name of Location");
     }
-    
 }

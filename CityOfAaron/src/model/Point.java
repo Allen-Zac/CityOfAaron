@@ -10,8 +10,34 @@ package model;
  * @author Zac Allen
  */
 public class Point {
-    @Override
-    public String toString(){
-        return ("Class coming soon.");
+    private int row;
+    private int column;
+
+    public Point() {
+        //Empty constructor for JavaBeans
     }
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
+    }
+
+    @Override
+    public String toString() {
+        return "Point {" 
+                + "row=" + row 
+                + ", column=" + column 
+                + '}';
+    }   
 }
