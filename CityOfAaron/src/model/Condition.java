@@ -10,8 +10,5 @@ package model;
  * @author Zac Allen
  */
 public enum Condition {
-    @Override
-    public String toString(){
-        return ("Enum-Class coming soon.");
-    }
+    //Enum class coming soon
 }

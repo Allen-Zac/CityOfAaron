@@ -10,6 +10,11 @@ package model;
  * @author Zac Allen
  */
 public class Player {
+
+    public Player() {
+        //Empty constructor for JavaBeans
+    }
+    
     @Override
     public String toString(){
         return ("Class coming soon.");
