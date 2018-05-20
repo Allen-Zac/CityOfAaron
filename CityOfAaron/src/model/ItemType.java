@@ -4,11 +4,14 @@
  * and open the template in the editor.
  */
 package model;
-
 /**
  *
- * @author Zac Allen
+ * @author Kayla Ng
  */
 public enum ItemType {
-    //Enum class coming soon.
+    animal,
+    tool,
+    provision;
+
+
 }
