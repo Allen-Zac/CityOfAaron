@@ -7,8 +7,12 @@ package model;
 
 /**
  *
- * @author Zac Allen
+ * @author Kayla Ng
  */
 public enum Condition {
-    //Enum class coming soon
+    good,
+    fair,
+    poor;
+    
+    
 }
