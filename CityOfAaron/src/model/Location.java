@@ -5,11 +5,13 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Zac Allen
  */
-public class Location {
+public class Location implements Serializable {
     private String name;
     private String description;
     private String mapSymbol;

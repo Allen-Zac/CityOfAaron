@@ -5,11 +5,13 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Zac Allen
  */
-public class Point {
+public class Point implements Serializable {
     private int row;
     private int column;
 

@@ -40,10 +40,14 @@ public class CityOfAaron {
         Map theMap = new Map();
         theMap.setCurrentLocation(new Point());
         
+        System.out.println(theMap.toString());
+        
         //Test the Point class.
         Point thePoint = new Point();
         thePoint.setColumn(2);
         thePoint.setRow(4);
+        
+        System.out.println(thePoint.toString());
         
         //Test the Location class.
         Location theLocation = new Location();
@@ -51,6 +55,8 @@ public class CityOfAaron {
         theLocation.setGameTips(args);
         theLocation.setMapSymbol("$");
         theLocation.setName("Name of Location");
+        
+        System.out.println(theLocation.toString());
         
         //Test the Storehouse class.
         Storehouse[] theStorehouse = new Storehouse[];
