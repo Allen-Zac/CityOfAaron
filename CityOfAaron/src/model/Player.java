@@ -4,19 +4,32 @@
  * and open the template in the editor.
  */
 package model;
+import java.io.Serializable;
 
 /**
  *
- * @author Zac Allen
+ * @author Carson Fullmer
  */
-public class Player {
+public class Player implements Serializable {
 
+    private String name;
+    
     public Player() {
         //Empty constructor for JavaBeans
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
     
     @Override
     public String toString(){
-        return ("Class coming soon.");
+        return "Player: ("
+                + "name=" + name
+                + ")";
     }
 }
