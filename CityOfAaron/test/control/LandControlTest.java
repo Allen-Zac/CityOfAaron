@@ -1,63 +1,73 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package control;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
  *
- * @author Ginger
+ * @author Zac Allen
  */
 public class LandControlTest {
     
     public LandControlTest() {
     }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    @Test
-    public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     /**
      * Test of buyLand method, of class LandControl.
+     * buyLand(wheatOwned, purchasePrice, amountToPurchase)
      */
+
+    // Test buyLand() with passing values.
     @Test
-    public void testBuyLand() {
-        System.out.println("buyLand");
-        int wheatOwned = 0;
-        int purchasePrice = 0;
-        int amountToPurchase = 0;
+    public void testPassingBuyLand() {
         LandControl instance = new LandControl();
-        int expResult = 0;
-        int result = instance.buyLand(wheatOwned, purchasePrice, amountToPurchase);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int result = instance.buyLand(50, 10, 5);
+        assertEquals(50, result);
+    }
+    
+    // Test buyLand() with failing values.
+    @Test
+    public void testFailingBuyLand() {
+        LandControl instance = new LandControl();
+        int result = instance.buyLand(50, 10, 6);
+        assertEquals(-1, result);
+    }
+    
+    // Test buyLand with lowest limits.
+    @Test
+    public void testLimitsBuyLand() {
+        LandControl instance = new LandControl();
+        int result = instance.buyLand(1, 1, 1);
+        assertEquals(1, result);
+    }
+
+    /**
+     * Test of sellLand method, of class LandControl.
+     * sellLand(acresToSell, landOwned, sellPrice);
+     */
+
+    // Test sellLand() with passing parameters.
+    @Test
+    public void testPassingSellLand() {
+        LandControl instance = new LandControl();
+        int result = instance.sellLand(10, 10, 20);
+        assertEquals(200, result);
+    }
+    
+    // Test sellLand() with failing parameters.
+    @Test
+    public void testFailingSellLand() {
+        LandControl instance = new LandControl();
+        int result = instance.sellLand(10, 9, 20);
+        assertEquals(-1, result);
+    }
+    
+    // Test sellLand() at its lowest limit.
+    @Test
+    public void testLimitsSellLand() {
+        LandControl instance = new LandControl();
+        int result = instance.sellLand(1, 1, 1);
+        assertEquals(1, result);
     }
     
 }
