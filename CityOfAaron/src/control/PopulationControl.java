@@ -32,6 +32,7 @@ public class PopulationControl {
                 wheatFed > wheatOwned) {
                 return -1;
         }
+        
         return popDeath;
     }
     

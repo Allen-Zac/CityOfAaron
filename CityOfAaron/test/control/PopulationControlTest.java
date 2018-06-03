@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package control;
-
 import org.junit.Test;
 import static org.junit.Assert.*;
 
