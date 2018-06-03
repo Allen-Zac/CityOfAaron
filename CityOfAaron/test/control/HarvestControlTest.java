@@ -5,10 +5,6 @@
  */
 package control;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -20,29 +16,6 @@ public class HarvestControlTest {
     
     public HarvestControlTest() {
     }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    @Test
-    public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
     /**
      * Test of plantCrops method, of class HarvestControl.
      */
@@ -56,8 +29,59 @@ public class HarvestControlTest {
         int expResult = 0;
         int result = instance.plantCrops(landOwned, wheatOwned, acresToPlant);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
+    public void testValidPlantCrops() {
+        HarvestControl instance = new HarvestControl();
+        int result = instance.plantCrops(10, 10, 10);
+        assertEquals(5, result, 0.0);
+    }
+    
+    public void testInvalidPlantCropsLand() {
+        HarvestControl instance = new HarvestControl();
+        int result = instance.plantCrops(-1, 10, 10);
+        assertEquals(-1, result, 0.0);
+    }
+    
+    public void testInvalidPlantCropsWheat() {
+        HarvestControl instance = new HarvestControl();
+        int result = instance.plantCrops(10, -1, 10);
+        assertEquals(-1, result, 0.0);
+    }
+    
+    public void testInvalidPlantCropsAcres() {
+        HarvestControl instance = new HarvestControl();
+        int result = instance.plantCrops(10, 10, -1);
+        assertEquals(-1, result, 0.0);
+    }
+    
+    public void testInvalidPlantCropsAcres2() {
+        HarvestControl instance = new HarvestControl();
+        int result = instance.plantCrops(10, 10, 22);
+        assertEquals(-1, result, 0.0);
+    }
+    
+    public void testValidPlantCropsBound() {
+        HarvestControl instance = new HarvestControl();
+        int result = instance.plantCrops(1, 2, 2);
+        assertEquals(2, result, 0.0);
+    }
+
+    /**
+     * Test of harvestCrops method, of class HarvestControl.
+     */
+    @Test
+    public void testHarvestCrops() {
+        System.out.println("harvestCrops");
+        int percentTithe = 7;
+        int Random = 1;
+        HarvestControl instance = new HarvestControl();
+        int expResult = 1;
+        int result = instance.harvestCrops(percentTithe, Random);
+        assertEquals(expResult, result);
+    }
+
+    
+
+   
 }
