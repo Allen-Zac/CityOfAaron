@@ -41,12 +41,12 @@ public class HarvestControl {
         }
         
         if (percentTithe >= 8 && percentTithe <= 12) {
-            int cropsHarvested = getRandomInRange(2, 4);
+            int cropsHarvested = getRandomInRange(2, 2);
             return cropsHarvested;
             
         }
         if (percentTithe > 12) {
-            int cropsHarvested = getRandomInRange(2, 5);
+            int cropsHarvested = getRandomInRange(2, 2);
             return cropsHarvested;
             
         }

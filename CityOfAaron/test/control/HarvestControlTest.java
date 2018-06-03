@@ -34,31 +34,31 @@ public class HarvestControlTest {
     public void testValidPlantCrops() {
         HarvestControl instance = new HarvestControl();
         int result = instance.plantCrops(10, 10, 10);
-        assertEquals(5, result, 0.0);
+        assertEquals(5, result);
     }
     
     public void testInvalidPlantCropsLand() {
         HarvestControl instance = new HarvestControl();
         int result = instance.plantCrops(-1, 10, 10);
-        assertEquals(-1, result, 0.0);
+        assertEquals(-1, result);
     }
     
     public void testInvalidPlantCropsWheat() {
         HarvestControl instance = new HarvestControl();
         int result = instance.plantCrops(10, -1, 10);
-        assertEquals(-1, result, 0.0);
+        assertEquals(-1, result);
     }
     
     public void testInvalidPlantCropsAcres() {
         HarvestControl instance = new HarvestControl();
         int result = instance.plantCrops(10, 10, -1);
-        assertEquals(-1, result, 0.0);
+        assertEquals(-1, result);
     }
     
     public void testInvalidPlantCropsAcres2() {
         HarvestControl instance = new HarvestControl();
         int result = instance.plantCrops(10, 10, 22);
-        assertEquals(-1, result, 0.0);
+        assertEquals(-1, result);
     }
     
     public void testValidPlantCropsBound() {
@@ -71,7 +71,7 @@ public class HarvestControlTest {
      * Test of harvestCrops method, of class HarvestControl.
      */
     @Test
-    public void testHarvestCrops() {
+    public void testHarvestCropsLessThan8() {
         System.out.println("harvestCrops");
         int percentTithe = 7;
         int Random = 1;
@@ -80,8 +80,26 @@ public class HarvestControlTest {
         int result = instance.harvestCrops(percentTithe, Random);
         assertEquals(expResult, result);
     }
-
     
+    public void testHarvestCrops8To12() {
+        System.out.println("harvestCrops");
+        int percentTithe = 8;
+        int Random = 2;
+        HarvestControl instance = new HarvestControl();
+        int expResult = 2;
+        int result = instance.harvestCrops(percentTithe, Random);
+        assertEquals(expResult, result);
+    }
+    
+    public void testHarvestCropsMoreThan12() {
+        System.out.println("harvestCrops");
+        int percentTithe = 13;
+        int Random = 2;
+        HarvestControl instance = new HarvestControl();
+        int expResult = 2;
+        int result = instance.harvestCrops(percentTithe, Random);
+        assertEquals(expResult, result);
+    }
 
    
 }
