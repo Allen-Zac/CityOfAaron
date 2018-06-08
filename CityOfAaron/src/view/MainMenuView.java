@@ -137,12 +137,13 @@ public class MainMenuView {
         }
     }
     private void startNewGame() {
-        NewGameView view = new NewGameView();
+        StartNewGameView view = new StartNewGameView();
         view.displayView();
     }
     
     private void helpMenu() {
-        System.out.println("** ***DO BY END OF THIS WEEK thing1");
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayView();
     }
     
     private void loadSavedGame() {

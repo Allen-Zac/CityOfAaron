@@ -98,7 +98,7 @@ public class StartProgramView {
      */
     public boolean doAction(String[] inputs){
        
-        StartMainMenuView();
+        startMainMenuView();
         
         //Return false so whoever calld us doesn't call us again.
         return false;

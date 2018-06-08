@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package view;
+import cityofaaron.CityOfAaron;
 import java.util.Scanner;
+import model.Player;
+import model.Game;
 /**
  *
  * @author cfull
@@ -137,7 +140,15 @@ public class StartNewGameView {
     // complex game stuff in our doAction() method. It will get messy very quickly.
     
     
-    private void createAnd StartGame(String playerName)(){
+    private void createAndStartGame(String playerName){
+        
+        /* Eventually, we will do this:
+        // Game game = GameControl.createNewGame(playerName);
+        // 
+        //
+        // but for this week, we will just do this...
+        */
+        
         // Define whatever code you need here to accomplish the action.
         // You can make this a void method if you want. Whatever you need 
         // here, you are free to do.
@@ -145,10 +156,10 @@ public class StartNewGameView {
         // Generally, though, this is where you will call into your Control
         // classes to do the work of the application.
         
-        Player.player = new Player();
+        Player player = new Player();
         player.setName(playerName);
         
-        Game game = name Game();
+        Game game = new Game();
         game.setThePlayer(player);
         
         CityOfAaron.setCurrentGame(game);
@@ -157,6 +168,12 @@ public class StartNewGameView {
         System.out.println("Welcome to the game, " + CityOfAaron.getCurrentGame().getThePlayer().getName() 
                         + "Next week we will have a GameMenuView that you will see. But for now, \n"
                         + "We're jsut going to send you back to the Main Menu.\n");
+        
+        /* 
+        // Once the GameMenuView is created, we will call it here.
+        // GameMenuView gameMenu = new GameMenuView();
+        // gameMenu.displayView();
+        */
     }
 }
 

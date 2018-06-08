@@ -24,12 +24,13 @@ public class HelpMenuView {
      */
     public HelpMenuView(){
         
-        message = "This is the message that is printed to the user by this view.\n"
-                + "You have three tasks:\n"
-                + "1 - Replace this message text with the text that is specific to your view.\n"
-                + "2 - Replace this list with menu options that are specific to your view.\n"
-                + "\n"
-                + "3 - Prompt the user for what they are expected to enter.\n";
+        message = "Help Menu\n"
+                + "---------\n"
+                + "G - What are the goals of the game?\n"
+                + "W - Where is the city of Aaron?\n"
+                + "M - How do I move to another location?\n"
+                + "D - How do I display a list of animals, provisions, and tools in the city storehouse?\n"
+                + "B - Back to the main menu.\n";
                 
     }
     
@@ -103,14 +104,33 @@ public class HelpMenuView {
      * should exit and return to the previous view.
      */
     public boolean doAction(String[] inputs){
-        // Act on the user's input.
-        // This is a "dispatch" function that decides what
-        // other functions to call. You can use an if-, if-else,
-        // or switch statement.
-        
-        // return false if you want this view to exit and return
-        // to the view that called it.
-        someActionHandler();
+        switch (inputs[0].trim().toUpperCase()) {
+            case "G":
+                System.out.println("The goal of the game is to make sure your "
+                        + "citizens stay alive by planting and harvesting crops, "
+                        + "feeding the people, paying tithes, buying and selling"
+                        + "land, and making adjustments for rat plagues.");
+                displayView();
+                break;
+            case "W":
+                System.out.println("The city of Aaron is located in the jungles"
+                        + "of South America.");
+                displayView();
+                break;
+            case "M":
+                System.out.println("To change locations, select the numbers that"
+                        + "correspond to the location  you want to move to.");
+                displayView();
+                break;
+            case "D":
+                System.out.println("To display a list of animals, provisions, "
+                        + "and tools, select the option from the gameplay menu.");
+                displayView();
+                break;
+            case "B":
+                return false;
+                
+        }
         
         return true;
     }
