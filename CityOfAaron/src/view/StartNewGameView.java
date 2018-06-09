@@ -167,7 +167,7 @@ public class StartNewGameView {
         System.out.println();
         System.out.println("Welcome to the game, " + CityOfAaron.getCurrentGame().getThePlayer().getName() 
                         + "Next week we will have a GameMenuView that you will see. But for now, \n"
-                        + "We're jsut going to send you back to the Main Menu.\n");
+                        + "We're just going to send you back to the Main Menu.\n");
         
         /* 
         // Once the GameMenuView is created, we will call it here.

@@ -24,12 +24,10 @@ public class StartProgramView {
      */
     public StartProgramView(){
         
-        message = "Welcome to our City called Aaron,. You is da king bruh! You gotta buy the land, sell the land, plan dat wheat so your peeps don't die. " 
+        message = "Welcome to our City called Aaron. You is da king bruh! You gotta buy the land, sell the land, plan dat wheat so your peeps don't die. " 
                 + "Since you're the man in charge, you gotta make them pay thier taxes/tithes, or else they going straigh to hell."
                 + "If your people don't get enough grub, they gon' die and you got no mo slaves."
-                + "Them dang ol' rats gon' eat your wheat, so watch out, ya hear!"
-                + "responsibility(what we are doing)"
-                + "rat danger";
+                + "Them dang ol' rats gon' eat your wheat, so watch out, ya hear!";
                 
     }
     

@@ -37,6 +37,7 @@ public class CityOfAaron {
      */
     public static void main(String[] args) {
         
+        /*
         //Test the Game class.
         Game theGame = new Game();
         theGame.setThePlayer(new Player());
@@ -77,7 +78,7 @@ public class CityOfAaron {
         theStorehouse.setAnimals(args);
         theStorehouse.setTools(args);
         theStorehouse.setProvisions(args);*/
-        
+        /*
         //Test the Player class.
         Player thePlayer = new Player();
         thePlayer.setName("Name of the player");
@@ -91,7 +92,7 @@ public class CityOfAaron {
         Author theAuthor = new Author();
         theAuthor.setName("Name of the author");
         theAuthor.setTitle("Title of the author");
-        
+        */
         //Start the program.
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayView();

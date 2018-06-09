@@ -89,7 +89,7 @@ public class HelpMenuView {
         // from the user.
         String[] inputs = new String[1];
         
-        inputs[0] = getUserInput("Change this text to prompt the user for the input.");
+        inputs[0] = getUserInput("Type your selection:");
         
         // Repeat for each input you need, putting it into its proper slot in the array.
         
@@ -110,22 +110,18 @@ public class HelpMenuView {
                         + "citizens stay alive by planting and harvesting crops, "
                         + "feeding the people, paying tithes, buying and selling"
                         + "land, and making adjustments for rat plagues.");
-                displayView();
                 break;
             case "W":
                 System.out.println("The city of Aaron is located in the jungles"
                         + "of South America.");
-                displayView();
                 break;
             case "M":
                 System.out.println("To change locations, select the numbers that"
                         + "correspond to the location  you want to move to.");
-                displayView();
                 break;
             case "D":
                 System.out.println("To display a list of animals, provisions, "
                         + "and tools, select the option from the gameplay menu.");
-                displayView();
                 break;
             case "B":
                 return false;
