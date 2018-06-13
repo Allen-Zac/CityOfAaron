@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
 import java.util.Scanner;
@@ -22,7 +17,27 @@ public class MapView {
      */
     public MapView(){
         
-        message = "Here is the Map.";
+        message = " T | C | V | F | R \n"
+                + "-------------------\n"
+                + " F | F | S | G | R \n"
+                + "-------------------\n"
+                + " F | F | R | R | U \n"
+                + "-------------------\n"
+                + " R | R | U | U | U \n"
+                + "-------------------\n"
+                + " B | B | B | B | B \n\n"
+                + "Key:\n\n"
+                + "T - Temple\n"
+                + "C - Ruler's Court\n"
+                + "V - The Village\n"
+                + "F - Fields\n"
+                + "S - Storehouse\n"
+                + "G - Granary\n"
+                + "R - River\n"
+                + "U - Undeveloped Land\n"
+                + "B - Lamanite Border\n\n"
+                + "In future weeks, we will populate this map by using a\n"
+                + "multi-dimensional array.\n\n";
                 
     }
     
@@ -91,7 +106,7 @@ public class MapView {
      */
     public boolean doAction(String[] inputs){
        
-        startMainMenuView();
+        
         
         //Return false so whoever calld us doesn't call us again.
         return false;
@@ -99,7 +114,7 @@ public class MapView {
     
     
     /**
-     * Control this view's display/prompt/action loop until the user
+     * Control this views display/prompt/action loop until the user
      * chooses and action that causes this view to close.
      */
     public void displayView(){
@@ -113,26 +128,5 @@ public class MapView {
             keepGoing = doAction(inputs);
         }
     }
-    
-    
-    // Define your action handlers here. These are the methods that your doAction()
-    // method will call based on the user's input. We don't want to do a lot of 
-    // complex game stuff in our doAction() method. It will get messy very quickly.
-    
-    
-    private boolean someActionHandler(){
-        // Define whatever code you need here to accomplish the action.
-        // You can make this a void method if you want. Whatever you need 
-        // here, you are free to do.
-        //
-        // Generally, though, this is where you will call into your Control
-        // classes to do the work of the application.
-        
-        return true;
-    }
-    
-    private void startMainMenuView() {
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayView();
-    }
+
 }
