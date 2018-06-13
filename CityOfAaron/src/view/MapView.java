@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package view;
 
 import java.util.Scanner;
@@ -6,8 +11,8 @@ import java.util.Scanner;
  *
  * @author Zac Allen
  */
-public class GameMenuView {
-        /**
+public class MapView {
+    /**
      * The message that will be displayed by this view.
      */
     protected String message;
@@ -15,17 +20,10 @@ public class GameMenuView {
     /**
      * Constructor
      */
-    public GameMenuView(){
+    public MapView(){
         
-        message = "Game Menu\n"
-                + "---------\n"
-                + "V - View the Map\n"
-                + "M - Move to a New Location\n"
-                + "C - Manage the Crops\n"
-                + "L - Live the Year\n"
-                + "R - Reports Menu\n"
-                + "S - Save Game\n"
-                + "Q - Return to the Main Menu\n";
+        message = "Here is the Map.";
+                
     }
     
     
@@ -79,15 +77,9 @@ public class GameMenuView {
      */
     public String[] getInputs() {
         
-        // Declare the array to have the number of elements you intend to get 
-        // from the user.
-        String[] inputs = new String[1];
+       //No other inputs
         
-        inputs[0] = getUserInput("Type your selection:");
-        
-        // Repeat for each input you need, putting it into its proper slot in the array.
-        
-        return inputs;
+        return null;
     }
     
     
@@ -98,36 +90,16 @@ public class GameMenuView {
      * should exit and return to the previous view.
      */
     public boolean doAction(String[] inputs){
-        switch (inputs[0].trim().toUpperCase()) {
-            case "V":
-                viewTheMap();
-                break;
-            case "M":
-                System.out.println("Coming Soon!");
-                break;
-            case "C":
-                System.out.println("Coming Soon!");
-                break;
-            case "L":
-                System.out.println("Coming Soon!");
-                break;
-            case "R":
-                System.out.println("Coming Soon!");
-                break;
-            case "S":
-                System.out.println("Coming Soon!");
-                break;
-            case "Q":
-                return false;
-                
-        }
+       
+        startMainMenuView();
         
-        return true;
+        //Return false so whoever calld us doesn't call us again.
+        return false;
     }
     
     
     /**
-     * Control this views display/prompt/action loop until the user
+     * Control this view's display/prompt/action loop until the user
      * chooses and action that causes this view to close.
      */
     public void displayView(){
@@ -142,9 +114,25 @@ public class GameMenuView {
         }
     }
     
-    private void viewTheMap() {
-        MapView map = new MapView();
-        map.displayView();
+    
+    // Define your action handlers here. These are the methods that your doAction()
+    // method will call based on the user's input. We don't want to do a lot of 
+    // complex game stuff in our doAction() method. It will get messy very quickly.
+    
+    
+    private boolean someActionHandler(){
+        // Define whatever code you need here to accomplish the action.
+        // You can make this a void method if you want. Whatever you need 
+        // here, you are free to do.
+        //
+        // Generally, though, this is where you will call into your Control
+        // classes to do the work of the application.
+        
+        return true;
     }
     
+    private void startMainMenuView() {
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayView();
+    }
 }
