@@ -15,6 +15,8 @@ import model.Location;
 import model.Animal;
 import model.Author;
 import view.StartProgramView;
+import view.ImpeachmentView;
+import view.View;
 
 /**
  *
@@ -38,7 +40,7 @@ public class CityOfAaron {
     public static void main(String[] args) {
         
         //Start the program.
-        StartProgramView startProgramView = new StartProgramView();
+        View startProgramView = new StartProgramView();
         startProgramView.displayView();
     }
 }

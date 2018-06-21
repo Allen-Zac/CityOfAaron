@@ -28,7 +28,7 @@ public class LiveTheYearView {
                 + "How many acres do you want to buy?\n"
                 + "How many acres do you want to sell?\n"
                 + "How much wheat do you want to feed the people?\n"
-                + "How many acres do you wante to plant?\n"
+                + "How many acres do you want to plant?\n"
                 + "What percentage of tithes do you want to pay?\n";
                 
     }
