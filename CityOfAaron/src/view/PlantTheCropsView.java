@@ -9,21 +9,20 @@ package view;
  *
  * @author Ginger
  */
-public class ImpeachmentView extends ViewBase{
-    /**
-     * The message that will be displayed by this view.
-     */
-    public ImpeachmentView(){
+public class PlantTheCropsView extends ViewBase{
+    
+    public PlantTheCropsView(){
         
     }
     
-    @Override
+     @Override
     protected String getMessage(){
-        return "You let way too many people die and you have been impeached!\n"
-                + "M - Main Menu\n";
-                
+        return "Plant the Crops\n"
+                + "---------\n"
+                + "How many acres of land do you want to plant?\n"
+                + "****Functionality coming soon****"
+                + "R - Return to Manage the Crops";
     }
-    
     
     
     /**
@@ -36,10 +35,8 @@ public class ImpeachmentView extends ViewBase{
         // Declare the array to have the number of elements you intend to get 
         // from the user.
         String[] inputs = new String[1];
-        
         inputs[0] = getUserInput("Type your selection:");
         
-        // Repeat for each input you need, putting it into its proper slot in the array.
         
         return inputs;
     }
@@ -54,21 +51,18 @@ public class ImpeachmentView extends ViewBase{
     @Override
     public boolean doAction(String[] inputs){
         switch (inputs[0].trim().toUpperCase()) {
-            case "M":
-                mainMenu();
+            case "R":
+                manageCropsMenu();
+                return false;
                 
         }
         
         return true;
     }
     
-    
-  
-    
-    
-    private void mainMenu(){
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayView();
+    private void manageCropsMenu(){
+        ManageTheCropsView view = new ManageTheCropsView();
+        view.displayView();
         
     }
 }

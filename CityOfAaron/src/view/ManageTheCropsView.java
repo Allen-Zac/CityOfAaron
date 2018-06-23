@@ -4,27 +4,30 @@
  * and open the template in the editor.
  */
 package view;
+
 /**
  *
  * @author Ginger
  */
-public class ReportView extends ViewBase{
+public class ManageTheCropsView extends ViewBase{
     
-    public ReportView(){
+    public ManageTheCropsView(){
         
     }
     
-    @Override
+     @Override
     protected String getMessage(){
-        return  "Report Menu\n"
+        return "Move Location\n"
                 + "---------\n"
-                + "A - View animals in the storehouse.\n"
-                + "T - View tools in the storehouse.\n"
-                + "P - View provisions in the storehouse\n"
-                + "G - View authors of this game.\n"
-                + "M - Main Menu\n";
-                
+                + "What would you like to do?\n"
+                + "B - Buy Land\n"
+                + "S - Sell Land\n"
+                + "F - Feed the People\n"
+                + "P - Plant Crops\n"
+                + "T - Pay Tithes and Offerings\n"
+                + "G - Return to the Game Menu\n";
     }
+    
     
     /**
      * Get the set of inputs from the user.
@@ -36,10 +39,8 @@ public class ReportView extends ViewBase{
         // Declare the array to have the number of elements you intend to get 
         // from the user.
         String[] inputs = new String[1];
-        
         inputs[0] = getUserInput("Type your selection:");
         
-        // Repeat for each input you need, putting it into its proper slot in the array.
         
         return inputs;
     }
@@ -54,25 +55,53 @@ public class ReportView extends ViewBase{
     @Override
     public boolean doAction(String[] inputs){
         switch (inputs[0].trim().toUpperCase()) {
-            case "A":
-                System.out.println("You have 800 goats.");
+            case "B":
+                buyLand();
                 break;
-            case "T":
-                System.out.println("You have 50 hoes.");
+            case "S":
+                sellLand();
+                break;
+            case "F":
+                feedThePeople();
                 break;
             case "P":
-                System.out.println("You have 300 blankets.");
+                plantCrops();
+                break;
+            case "T":
+                payTithing();
                 break;
             case "G":
-                System.out.println("The authors of the game are Zac, Kayla, and Carson.");
-                break;
-            case "M":
                 gameMenu();
                 return false;
                 
         }
         
         return true;
+    }
+    
+    private void buyLand() {
+        BuyLandView view = new BuyLandView();
+        view.displayView();
+    }
+    
+    private void sellLand() {
+        sellLandView view = new sellLandView();
+        view.displayView();
+    }
+    
+    private void feedThePeople() {
+        FeedThePeopleView view = new FeedThePeopleView();
+        view.displayView();
+    }
+    
+    private void plantCrops() {
+        PlantTheCropsView view = new PlantTheCropsView();
+        view.displayView();
+    }
+    
+    private void payTithing() {
+        PayTithingView view = new PayTithingView();
+        view.displayView();
     }
     
     private void gameMenu(){
