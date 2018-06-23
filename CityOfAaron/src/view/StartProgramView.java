@@ -10,7 +10,7 @@ package view;
  */
 
    
-public class StartProgramView extends ViewBase{
+public class StartProgramView extends ViewBase {
     
     
    
@@ -24,10 +24,10 @@ public class StartProgramView extends ViewBase{
     
     @Override
     protected String getMessage() {
-        return "Welcome to our City called Aaron. You is da king bruh! You gotta buy the land, sell the land, plan dat wheat so your peeps don't die.\n " 
-                + "Since you're the man in charge, you gotta make them pay thier taxes/tithes, or else they going straigh to hell.\n"
-                + "If your people don't get enough grub, they gon' die and you got no mo slaves.\n"
-                + "Them dang ol' rats gon' eat your wheat, so watch out, ya hear!";
+        return "\nWelcome to the City of Aaron! You are the ruler of this land, so it is\n"
+                + "your job to buy land, sell land, plant wheat, and pay tithing.\n"
+                + "If your people don't get enough to eat, they will die. You\n"
+                + "will also have to deal with rats eating your wheat. Good luck!\n";
     }
     
     @Override

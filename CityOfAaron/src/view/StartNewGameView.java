@@ -25,7 +25,7 @@ public class StartNewGameView extends ViewBase{
     
     @Override
     protected String getMessage() {
-        return "Start a new game\n";
+        return "Starting a new game\n";
     }
     
     
