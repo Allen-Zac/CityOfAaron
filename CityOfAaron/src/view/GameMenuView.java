@@ -1,5 +1,8 @@
 package view;
 
+import cityofaaron.CityOfAaron;
+import model.Game;
+
 import java.util.Scanner;
 
 /**
@@ -76,7 +79,7 @@ public class GameMenuView extends ViewBase {
                 System.out.println("Coming Soon!");
                 break;
             case "R":
-                System.out.println("Coming Soon!");
+                reportsMenu();
                 break;
             case "S":
                 saveTheGame();
@@ -107,5 +110,10 @@ public class GameMenuView extends ViewBase {
     private void saveTheGame() {
         SaveGameView saveGame = new SaveGameView();
         saveGame.displayView();
+    }
+    
+    private void reportsMenu() {
+        ReportView reports = new ReportView();
+        reports.displayView();
     }
 }

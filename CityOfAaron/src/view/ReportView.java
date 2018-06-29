@@ -4,6 +4,12 @@
  * and open the template in the editor.
  */
 package view;
+
+import cityofaaron.CityOfAaron;
+import control.StorehouseControl;
+import model.Game;
+import model.Storehouse;
+
 /**
  *
  * @author Ginger
@@ -58,7 +64,7 @@ public class ReportView extends ViewBase{
                 System.out.println("You have 800 goats.");
                 break;
             case "T":
-                System.out.println("You have 50 hoes.");
+                displayTools();
                 break;
             case "P":
                 System.out.println("You have 300 blankets.");
@@ -79,5 +85,12 @@ public class ReportView extends ViewBase{
         GameMenuView view = new GameMenuView();
         view.displayView();
         
+    }
+    
+    private void displayTools() {
+        System.out.println("Shovel, Hoe, Rake, Hammer, Axe");
+        
+        Game game = CityOfAaron.getCurrentGame();
+        game.getTheStorehouse().getTools();
     }
 }

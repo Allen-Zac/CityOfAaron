@@ -13,7 +13,16 @@ public class InventoryItem {
     private ItemType itemType;
     private int quantity;
     private Condition condition;
+    private String name;
 
+    public InventoryItem() {
+        // Empty default constructor
+    }
+    
+    public InventoryItem(String name) {
+        setName(name);
+    }
+    
     public ItemType getItemType() {
         return itemType;
     }
@@ -36,6 +45,14 @@ public class InventoryItem {
 
     public void setCondition(Condition condition) {
         this.condition = condition;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override

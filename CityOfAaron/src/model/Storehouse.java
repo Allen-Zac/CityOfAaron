@@ -19,7 +19,6 @@ public class Storehouse implements Serializable {
         //Empty constructor for JavaBeans
     }
     
-    
     public Author[] getAuthors() {
         return authors;
     }
