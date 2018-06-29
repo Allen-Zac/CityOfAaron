@@ -20,6 +20,12 @@ public class Location implements Serializable {
     public Location() {
         //Empty constructor for JavaBeans
     }
+    
+    public Location(String name, String description, String mapSymbol) {
+        setName(name);
+        setDescription(description);
+        setMapSymbol(mapSymbol);
+    }
 
     public String getName() {
         return name;

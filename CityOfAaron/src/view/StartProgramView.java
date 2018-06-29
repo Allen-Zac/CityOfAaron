@@ -50,15 +50,6 @@ public class StartProgramView extends ViewBase {
         return false;
     }
     
-    
-    
-    
-    private boolean someActionHandler(){
-       
-        
-        return true;
-    }
-    
     private void startMainMenuView() {
         pause(2000);
         View  mainMenu = new MainMenuView();

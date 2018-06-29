@@ -85,12 +85,12 @@ public class ManageTheCropsView extends ViewBase{
     }
     
     private void sellLand() {
-        sellLandView view = new sellLandView();
+        SellLandView view = new SellLandView();
         view.displayView();
     }
     
     private void feedThePeople() {
-        FeedThePeopleView view = new FeedThePeopleView();
+        FeedPeopleView view = new FeedPeopleView();
         view.displayView();
     }
     

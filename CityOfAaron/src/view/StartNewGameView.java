@@ -8,6 +8,9 @@ import cityofaaron.CityOfAaron;
 import java.util.Scanner;
 import model.Player;
 import model.Game;
+import control.GameControl;
+import model.Map;
+import model.Storehouse;
 /**
  *
  * @author cfull
@@ -62,10 +65,14 @@ public class StartNewGameView extends ViewBase{
         Player player = new Player();
         player.setName(playerName);
         
-        Game game = new Game();
-        game.setThePlayer(player);
+        Map theMap = new Map();
         
-        CityOfAaron.setCurrentGame(game);
+        Storehouse theStorehouse = new Storehouse();
+        
+        GameControl game = new GameControl();
+        game.createNewGame(player, theMap, theStorehouse);
+        
+        //CityOfAaron.setCurrentGame(game);
         
         System.out.println();
         System.out.println("Welcome to the game, " + CityOfAaron.getCurrentGame().getThePlayer().getName() 
