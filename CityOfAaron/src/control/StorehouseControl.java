@@ -29,4 +29,26 @@ public class StorehouseControl {
         
         return tools;
     }
+    public static Storehouse storehouseAnimals() {
+        Storehouse stores = new Storehouse();
+        
+        InventoryItem[] animals = createAnimals();
+        
+        stores.setAnimals(animals);
+        
+        return stores;
+    }
+    
+    public static InventoryItem[] createAnimals() {
+        InventoryItem[] animals = new InventoryItem[5];
+       
+        animals[0] = new InventoryItem("Cow");
+        animals[1] = new InventoryItem("Goat");
+        animals[2] = new InventoryItem("Cat");
+        animals[3] = new InventoryItem("Sheep");
+        animals[4] = new InventoryItem("Dog");
+        
+        return animals;
+    }
+    
 }
