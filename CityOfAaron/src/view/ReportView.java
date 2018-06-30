@@ -67,7 +67,7 @@ public class ReportView extends ViewBase{
                 displayTools();
                 break;
             case "P":
-                System.out.println("You have 300 blankets.");
+                displayProvisions();
                 break;
             case "G":
                 System.out.println("The authors of the game are Zac, Kayla, and Carson.");
@@ -92,5 +92,12 @@ public class ReportView extends ViewBase{
         
         Game game = CityOfAaron.getCurrentGame();
         game.getTheStorehouse().getTools();
+    }
+    
+    private void displayProvisions() {
+        System.out.println("Wheat, Water, Seed, Fertilizer");
+        
+        Game game = CityOfAaron.getCurrentGame();
+        game.getTheStorehouse().getProvisions();
     }
 }

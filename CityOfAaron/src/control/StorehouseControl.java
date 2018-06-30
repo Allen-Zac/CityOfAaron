@@ -51,4 +51,25 @@ public class StorehouseControl {
         return animals;
     }
     
+    public static Storehouse storehouseProvisions() {
+        Storehouse stores = new Storehouse();
+        
+        InventoryItem[] provisions = createProvisions();
+        
+        stores.setProvisions(provisions);
+        
+        return stores;
+    }
+    
+    public static InventoryItem[] createProvisions() {
+        InventoryItem[] provisions = new InventoryItem[4];
+        
+        provisions[0] = new InventoryItem("Wheat");
+        provisions[1] = new InventoryItem("Water");
+        provisions[2] = new InventoryItem("Seed");
+        provisions[3] = new InventoryItem("Fertilizer");
+        
+        return provisions;
+    }
+    
 }
