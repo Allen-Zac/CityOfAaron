@@ -54,16 +54,15 @@ public class PayTithingView extends ViewBase {
             System.out.println("No value entered. Returning to the Game Menu...");
             return false;
         }
-        
-        int percentage = Integer.parseInt(inputs[0]);	
-        
-        if (percentage < 8 || percentage > 12) {
+
+        try {
+            int percentage = Integer.parseInt(inputs[0]);
+            calcTithingPaid(percentage);
+        } 
+        catch (NumberFormatException nfe) {
             System.out.println("Incorrect value. Tithing not paid, please come back and try again.\n"
-                    + "Returning to the Game Menu...");
-            return false;
-        }
-        
-        calcTithingPaid(percentage);
+                                + "Returning to the Game Menu...");
+        } 
         
         return false;
     }

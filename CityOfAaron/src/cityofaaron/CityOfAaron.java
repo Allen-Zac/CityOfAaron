@@ -34,14 +34,20 @@ public class CityOfAaron {
             currentGame = game;
         }
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        
-        //Start the program.
-        View startProgramView = new StartProgramView();
-        startProgramView.displayView();
-    }
+
+        /**
+         * @param args the command line arguments
+         */
+        public static void main(String[] args) {
+            try {
+                //Start the program.
+                View startProgramView = new StartProgramView();
+                startProgramView.displayView();
+            }
+            catch (Throwable e) {
+                System.out.println("Error Detected - ");
+            }
+        }
+
 }
  

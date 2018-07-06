@@ -73,7 +73,7 @@ public class GameMenuView extends ViewBase {
                 System.out.println("Coming Soon!");
                 break;
             case "C":
-                System.out.println("Coming Soon!");
+                viewTithing();
                 break;
             case "L":
                 System.out.println("Coming Soon!");
@@ -95,6 +95,11 @@ public class GameMenuView extends ViewBase {
     private void viewTheMap() {
         MapView map = new MapView();
         map.displayView();
+    }
+    
+    private void viewTithing() {
+        PayTithingView tithing = new PayTithingView();
+        tithing.displayView();
     }
     
     private void viewAnnualReport() {
