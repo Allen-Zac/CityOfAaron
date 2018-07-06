@@ -5,15 +5,17 @@ import model.Player;
 import model.Game;
 import model.Map;
 import model.Storehouse;
+import exceptions.GameControlException;
 
 /**
  *
  * @author Zac Allen
  */
 public class GameControl {
-    public static int createNewGame(Player thePlayer, Map theMap, Storehouse theStorehouse) {
+    public static void createNewGame(Player thePlayer, Map theMap, Storehouse theStorehouse) 
+        throws GameControlException {
         if (thePlayer == null) {
-            return -1;
+            throw new GameControlException("The Player cannot be empty.");
         }
         
         Game game = new Game();
@@ -32,8 +34,5 @@ public class GameControl {
         game.setWheatInStorage(2700);
         
         CityOfAaron.setCurrentGame(game);
-        
-        return 1;
-            
     }
 }

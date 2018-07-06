@@ -11,6 +11,8 @@ import model.Game;
 import control.GameControl;
 import model.Map;
 import model.Storehouse;
+import exceptions.GameControlException;
+
 /**
  *
  * @author cfull
@@ -70,7 +72,13 @@ public class StartNewGameView extends ViewBase{
         Storehouse theStorehouse = new Storehouse();
         
         GameControl game = new GameControl();
-        game.createNewGame(player, theMap, theStorehouse);
+        
+        try {
+            game.createNewGame(player, theMap, theStorehouse);
+        }
+        catch (GameControlException ie) {
+            System.out.println(ie.getMessage());
+        }
         
         System.out.println();
         System.out.println("Welcome to the game, " + CityOfAaron.getCurrentGame().getThePlayer().getName() 
