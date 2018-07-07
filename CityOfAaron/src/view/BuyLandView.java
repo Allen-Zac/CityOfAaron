@@ -5,6 +5,9 @@
  */
 package view;
 
+import exceptions.LandControlException;
+import control.LandControl;
+
 /**
  *
  * @author Ethan Russon
@@ -50,13 +53,19 @@ public class BuyLandView extends ViewBase {
             System.out.println("No value entered. Returning to the Game Menu...");
             return false;
         }
-        
+
         buyLand();
         
         return false;
     }
 
     private void buyLand() {
-        System.out.println("Entered acreage will be checked to see if the player has sufficient wheat.\n");
+        LandControl land = new LandControl();
+        try {
+            land.buyLand(300, 100, 5);
+        }
+        catch(LandControlException ie) {
+            System.out.println(ie.getMessage());
+        }
     }
 }

@@ -1,28 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package control;
+
+import exceptions.LandControlException;
 
 /**
  *
  * @author Zac Allen
  */
 public class LandControl {
-    public int buyLand(int wheatOwned, int purchasePrice, int amountToPurchase){
+    public int buyLand(int wheatOwned, int purchasePrice, int amountToPurchase) 
+        throws LandControlException {
+        
         int totalPrice = purchasePrice * amountToPurchase;
         
         if (wheatOwned < totalPrice) {
-            return -1;
+            throw new LandControlException("Not enough wheat. Please enter a different amount.");
         }
         
         return totalPrice;
     }
     
-    public int sellLand(int acresToSell, int landOwned, int sellPrice){
+    public int sellLand(int acresToSell, int landOwned, int sellPrice) 
+        throws LandControlException {
+        
         if (acresToSell > landOwned) {
-            return -1;
+            throw new LandControlException ("Not enough acres. Please enter a different amount.");
         }
         
         int wheatGained = acresToSell * sellPrice;

@@ -1,9 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
+
+import control.LandControl;
+import exceptions.LandControlException;
 
 /**
  *
@@ -56,6 +54,12 @@ public class SellLandView extends ViewBase {
     }
 
     private void sellLand() {
-        System.out.println("Entered acreage will be checked to see if the player has sufficient acres to sell.\n");
+        LandControl land = new LandControl();
+        try {
+            land.sellLand(20, 10, 200);
+        }
+        catch(LandControlException ie) {
+            System.out.println(ie.getMessage());
+        }
     }
 }
