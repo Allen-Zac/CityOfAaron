@@ -5,6 +5,9 @@
  */
 package view;
 
+import control.HarvestControl;
+import exceptions.HarvestControlException;
+
 /**
  *
  * @author Ethan Russon
@@ -34,7 +37,7 @@ public class PayTithingView extends ViewBase {
         
         inputs[0] = getUserInput("If you wish to pay tithing, you may choose\n"
                 + "to pay between 8 and 12 percent of your earnings this year.\n"
-                + "Please enter a whole number that is at >7 and <12.\n\n"
+                + "Please enter a whole number from 7 and 12.\n\n"
                 + "If you have changed your mind, simply enter nothing\n"
                 + "and you will be returned to the Game Menu.", true);
         
@@ -68,7 +71,12 @@ public class PayTithingView extends ViewBase {
     }
 
     private void calcTithingPaid(int percentage) {
-        System.out.println("Entered Tithing percentage will be saved and used to\n"
-            + "calculate how much tithing is coming out of your inventory.\n");
+        HarvestControl plant = new HarvestControl();
+        try {
+            plant.plantCrops(10, -1, 10);
+        }
+        catch(HarvestControlException ie) {
+            System.out.println(ie.getMessage());
+        }
     }
 }
