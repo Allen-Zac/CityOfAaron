@@ -1,5 +1,6 @@
 package control;
 
+import exceptions.MapControlException;
 import model.Map;
 import model.Location;
 
@@ -8,7 +9,8 @@ import model.Location;
  * @author Ginger
  */
 public class MapControl {
-    public static Map createMap(int numOfRows, int numOfColumns) {
+    public static Map createMap(int numOfRows, int numOfColumns) 
+        throws MapControlException {
         if (numOfRows < 0 || numOfColumns < 0) {
             return null; 
         }
@@ -21,7 +23,8 @@ public class MapControl {
         return map;
     }
     
-    public static Location[][] createLocations(int rows, int columns) {
+    public static Location[][] createLocations(int rows, int columns) 
+        throws MapControlException {
         if (rows < 0 || columns < 0) {
             return null; 
         }
