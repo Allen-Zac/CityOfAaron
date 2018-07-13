@@ -100,13 +100,12 @@ public class ReportView extends ViewBase{
                 + "Hoe    | 7\n"
                 + "Axe    | 14\n");
         
-        StorehouseControl storehouseC = new StorehouseControl();
+        StorehouseControl storehouseControl = new StorehouseControl();
         Storehouse storehouse = new Storehouse();
         CityOfAaron main = new CityOfAaron();
         
         for (int i = 0; i < 4; i++) {
-            System.out.println(main.currentGame.getTheStorehouse().getTools());
-            
+            this.console.println(main.currentGame.getTheStorehouse().getTools()); 
         }
     }
     
