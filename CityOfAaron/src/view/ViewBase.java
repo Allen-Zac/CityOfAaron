@@ -52,8 +52,6 @@ public abstract class ViewBase implements View {
         boolean inputReceived = false;
         String input = null;
         try {
-            input = this.keyboard.readLine();
-        
             while(inputReceived == false){
             
                 this.console.println(prompt);
@@ -62,6 +60,8 @@ public abstract class ViewBase implements View {
                 if (input == null){
                     input = "";
                 }
+                
+                input = this.keyboard.readLine();
 
                 // Trim any trailing whitespace, including the carriage return.
                 input = input.trim();

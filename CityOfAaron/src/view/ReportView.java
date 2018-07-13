@@ -26,6 +26,7 @@ public class ReportView extends ViewBase{
                 + "---------\n"
                 + "A - View animals in the storehouse.\n"
                 + "T - View tools in the storehouse.\n"
+                + "F - Print the tools to a file.\n"
                 + "P - View provisions in the storehouse\n"
                 + "G - View authors of this game.\n"
                 + "M - Main Menu\n";
@@ -66,11 +67,14 @@ public class ReportView extends ViewBase{
             case "T":
                 displayTools();
                 break;
+            case "F":
+                printTools();
+                break;
             case "P":
                 displayProvisions();
                 break;
             case "G":
-                this.console.println("The authors of the game are Zac, Kayla, and Carson.");
+                this.console.println("The authors of the game are Zac, Kayla, and Ethan.");
                 break;
             case "M":
                 gameMenu();
@@ -83,15 +87,31 @@ public class ReportView extends ViewBase{
     
     private void gameMenu(){
         GameMenuView view = new GameMenuView();
-        view.displayView();
-        
+        view.displayView(); 
     }
     
     private void displayTools() {
-        this.console.println("Shovel, Hoe, Rake, Hammer, Axe");
+        this.console.println("\nTools in the Storehouse\n"
+                + "-----------------------\n"
+                + "Name   | Quantity\n"
+                + "-----------------------\n"
+                + "Shovel | 20\n"
+                + "Hammer | 12\n"
+                + "Hoe    | 7\n"
+                + "Axe    | 14\n");
         
-        Game game = CityOfAaron.getCurrentGame();
-        game.getTheStorehouse().getTools();
+        StorehouseControl storehouseC = new StorehouseControl();
+        Storehouse storehouse = new Storehouse();
+        CityOfAaron main = new CityOfAaron();
+        
+        for (int i = 0; i < 4; i++) {
+            System.out.println(main.currentGame.getTheStorehouse().getTools());
+            
+        }
+    }
+    
+    private void printTools() {
+        this.console.println("Coming Soon.");
     }
     
     private void displayProvisions() {

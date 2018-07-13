@@ -21,11 +21,11 @@ public class StorehouseControl {
     public static InventoryItem[] createTools() {
         InventoryItem[] tools = new InventoryItem[5];
        
-        tools[0] = new InventoryItem("Shovel");
-        tools[1] = new InventoryItem("Hoe");
-        tools[2] = new InventoryItem("Rake");
-        tools[3] = new InventoryItem("Hammer");
-        tools[4] = new InventoryItem("Axe");
+        tools[0] = new InventoryItem("Shovel", 12);
+        tools[1] = new InventoryItem("Hoe", 14);
+        tools[2] = new InventoryItem("Rake", 18);
+        tools[3] = new InventoryItem("Hammer", 20);
+        tools[4] = new InventoryItem("Axe", 10);
         
         return tools;
     }
@@ -42,11 +42,11 @@ public class StorehouseControl {
     public static InventoryItem[] createAnimals() {
         InventoryItem[] animals = new InventoryItem[5];
        
-        animals[0] = new InventoryItem("Cow");
-        animals[1] = new InventoryItem("Goat");
-        animals[2] = new InventoryItem("Cat");
-        animals[3] = new InventoryItem("Sheep");
-        animals[4] = new InventoryItem("Dog");
+        animals[0] = new InventoryItem("Cow", 1);
+        animals[1] = new InventoryItem("Goat", 800);
+        animals[2] = new InventoryItem("Cat", 20000);
+        animals[3] = new InventoryItem("Sheep", 9);
+        animals[4] = new InventoryItem("Dog", 10);
         
         return animals;
     }
@@ -64,10 +64,10 @@ public class StorehouseControl {
     public static InventoryItem[] createProvisions() {
         InventoryItem[] provisions = new InventoryItem[4];
         
-        provisions[0] = new InventoryItem("Wheat");
-        provisions[1] = new InventoryItem("Water");
-        provisions[2] = new InventoryItem("Seed");
-        provisions[3] = new InventoryItem("Fertilizer");
+        provisions[0] = new InventoryItem("Wheat", 1);
+        provisions[1] = new InventoryItem("Water", 2);
+        provisions[2] = new InventoryItem("Seed", 3);
+        provisions[3] = new InventoryItem("Fertilizer", 4);
         
         return provisions;
     }

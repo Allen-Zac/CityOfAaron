@@ -19,8 +19,11 @@ public class InventoryItem {
         // Empty default constructor
     }
     
-    public InventoryItem(String name) {
+    public InventoryItem(String name, int quantity) {
         setName(name);
+        setQuantity(quantity);
+        //this.name = name;
+        //this.quantity = quantity;
     }
     
     public ItemType getItemType() {
