@@ -5,6 +5,9 @@
  */
 package view;
 
+import cityofaaron.CityOfAaron;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -13,6 +16,9 @@ import java.util.Scanner;
  */
 public abstract class ViewBase implements View {
     
+    private String message;
+    protected final BufferedReader keyboard = CityOfAaron.getInFile();
+    protected final PrintWriter console = CityOfAaron.getOutFile();
     
     public ViewBase(){
         
@@ -33,7 +39,7 @@ public abstract class ViewBase implements View {
             
             String message = getMessage();
             if (message != null) {
-                System.out.println(getMessage());
+                this.console.println(getMessage());
             }
             
             String[] inputs = getInputs();
@@ -43,27 +49,31 @@ public abstract class ViewBase implements View {
     
     protected String getUserInput(String prompt, boolean allowEmpty){
         
-        Scanner keyboard = new Scanner(System.in);
-        String input = "";
         boolean inputReceived = false;
+        String input = null;
+        try {
+            input = this.keyboard.readLine();
         
-        while(inputReceived == false){
+            while(inputReceived == false){
             
-            System.out.println(prompt);
-            input = keyboard.nextLine();
-            
-            // Make sure we avoid a null-pointer error.
-            if (input == null){
-                input = "";
+                this.console.println(prompt);
+
+                // Make sure we avoid a null-pointer error.
+                if (input == null){
+                    input = "";
+                }
+
+                // Trim any trailing whitespace, including the carriage return.
+                input = input.trim();
+
+                if (input.equals("") == false || allowEmpty == true){
+                    inputReceived = true;
+                }
+            break;
             }
-            
-            // Trim any trailing whitespace, including the carriage return.
-            input = input.trim();
-            
-            if (input.equals("") == false || allowEmpty == true){
-                inputReceived = true;
-            }
-        }
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error reading input.");        }
+        
         
         return input;
     }

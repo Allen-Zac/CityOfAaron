@@ -54,7 +54,7 @@ public class PayTithingView extends ViewBase {
     @Override
     public boolean doAction(String[] inputs){
         if (inputs[0] == null || inputs[0].equals("")) {
-            System.out.println("No value entered. Returning to the Game Menu...");
+            ErrorView.display(this.getClass().getName(), "No Value Entered. Returning to Game Menu.");
             return false;
         }
 
@@ -63,7 +63,7 @@ public class PayTithingView extends ViewBase {
             calcTithingPaid(percentage);
         } 
         catch (NumberFormatException nfe) {
-            System.out.println("Incorrect value. Tithing not paid, please come back and try again.\n"
+                        ErrorView.display(this.getClass().getName(), "Incorrect value. Tithing not paid, please come back and try again.\n"
                                 + "Returning to the Game Menu...");
         } 
         
@@ -76,7 +76,7 @@ public class PayTithingView extends ViewBase {
             plant.plantCrops(10, -1, 10);
         }
         catch(HarvestControlException ie) {
-            System.out.println(ie.getMessage());
+            this.console.println(ie.getMessage());
         }
     }
 }

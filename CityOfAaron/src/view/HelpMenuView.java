@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package view;
+import cityofaaron.CityOfAaron;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 /**
  *
@@ -13,11 +16,13 @@ import java.util.Scanner;
     
 public class HelpMenuView {
     
+    private String message;
+    protected final BufferedReader keyboard = CityOfAaron.getInFile();
+    protected final PrintWriter console = CityOfAaron.getOutFile();
     
     /**
      * The message that will be displayed by this view.
      */
-    protected String message;
     
     /**
      * Constructor
@@ -43,27 +48,33 @@ public class HelpMenuView {
      */
     protected String getUserInput(String prompt, boolean allowEmpty){
         
-        Scanner keyboard = new Scanner(System.in);
-        String input = "";
         boolean inputReceived = false;
+        String input = null;
+        try {
+            input = this.keyboard.readLine();
         
-        while(inputReceived == false){
+            while(inputReceived == false){
             
-            System.out.println(prompt);
-            input = keyboard.nextLine();
-            
-            // Make sure we avoid a null-pointer error.
-            if (input == null){
-                input = "";
+                this.console.println(prompt);
+
+                // Make sure we avoid a null-pointer error.
+                if (input == null){
+                    input = "";
+                }
+
+                // Trim any trailing whitespace, including the carriage return.
+                input = input.trim();
+
+                if (input.equals("") == false || allowEmpty == true){
+                    inputReceived = true;
+                }
+            break;
             }
-            
-            // Trim any trailing whitespace, including the carriage return.
-            input = input.trim();
-            
-            if (input.equals("") == false || allowEmpty == true){
-                inputReceived = true;
-            }
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error reading input.");
+
         }
+        
         
         return input;
     }
@@ -106,21 +117,21 @@ public class HelpMenuView {
     public boolean doAction(String[] inputs){
         switch (inputs[0].trim().toUpperCase()) {
             case "G":
-                System.out.println("The goal of the game is to make sure your "
+                this.console.println("The goal of the game is to make sure your "
                         + "citizens stay alive by planting and harvesting crops, "
                         + "feeding the people, paying tithes, buying and selling"
                         + "land, and making adjustments for rat plagues.");
                 break;
             case "W":
-                System.out.println("The city of Aaron is located in the jungles"
+                this.console.println("The city of Aaron is located in the jungles"
                         + "of South America.");
                 break;
             case "M":
-                System.out.println("To change locations, select the numbers that"
+                this.console.println("To change locations, select the numbers that"
                         + "correspond to the location  you want to move to.");
                 break;
             case "D":
-                System.out.println("To display a list of animals, provisions, "
+                this.console.println("To display a list of animals, provisions, "
                         + "and tools, select the option from the gameplay menu.");
                 break;
             case "B":
@@ -142,7 +153,7 @@ public class HelpMenuView {
         
         while(keepGoing == true){
             
-            System.out.println(message);
+            this.console.println(message);
             String[] inputs = getInputs();
             keepGoing = doAction(inputs);
         }

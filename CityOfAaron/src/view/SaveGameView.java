@@ -1,5 +1,10 @@
 package view;
 
+import cityofaaron.CityOfAaron;
+import control.GameControl;
+import exceptions.GameControlException;
+import java.io.IOException;
+import model.Game;
 /**
  *
  * @author Zac Allen
@@ -44,7 +49,14 @@ public class SaveGameView extends ViewBase {
      */
     @Override
     public boolean doAction(String[] inputs){
-        System.out.println("\nThe file has succesfully been saved to "
+        String filePath = inputs[0];
+        Game game = CityOfAaron.getCurrentGame();
+        try {
+            GameControl.saveGame(game, filePath);
+        } catch(IOException e) {
+            ErrorView.display(this.getClass().getName(), "Sorry, game was not saved.");
+        }
+        this.console.println("\nThe file has succesfully been saved to "
                 + inputs[0] + ".\n");
         
         return false;

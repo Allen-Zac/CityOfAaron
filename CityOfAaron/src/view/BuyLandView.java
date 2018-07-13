@@ -50,7 +50,7 @@ public class BuyLandView extends ViewBase {
     @Override
     public boolean doAction(String[] inputs){
         if (inputs[0] == null || inputs[0].equals("")) {
-            System.out.println("No value entered. Returning to the Game Menu...");
+            ErrorView.display(this.getClass().getName(), "No value entered. Returning to the Game Menu...");
             return false;
         }
 
@@ -65,7 +65,7 @@ public class BuyLandView extends ViewBase {
             land.buyLand(300, 100, 5);
         }
         catch(LandControlException ie) {
-            System.out.println(ie.getMessage());
+            ErrorView.display(this.getClass().getName(), "Sorry, you don't have enough wheat.");
         }
     }
 }

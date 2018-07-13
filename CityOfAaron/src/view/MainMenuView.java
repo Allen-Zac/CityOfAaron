@@ -65,7 +65,7 @@ public class MainMenuView extends ViewBase {
                 helpMenu();
                 break;
             case "Q":
-                System.out.println("Thanks for playing!");
+                this.console.println("Thanks for playing!");
                 return false;
                 
         }
@@ -84,7 +84,8 @@ public class MainMenuView extends ViewBase {
     }
     
     private void loadSavedGame() {
-        System.out.println("** ***DO LATER thing2");
+        LoadSavedGameView loadSavedGameView = new LoadSavedGameView();
+        loadSavedGameView.displayView();
     }
 }
 

@@ -59,31 +59,31 @@ public class MoveLocationView extends ViewBase{
     public boolean doAction(String[] inputs){
         switch (inputs[0].trim().toUpperCase()) {
             case "T":
-                System.out.println("You are in the Temple.\n Here's a hint: ");
+                this.console.println("You are in the Temple.\n Here's a hint: ");
                 break;
             case "C":
-                System.out.println("You are in the Ruler's Court.\n Here's a hint: ");
+                this.console.println("You are in the Ruler's Court.\n Here's a hint: ");
                 break;
             case "V":
-                System.out.println("You are in the The Village.\n Here's a hint: ");
+                this.console.println("You are in the The Village.\n Here's a hint: ");
                 break;
             case "F":
-                System.out.println("You are in the Fields.\n Here's a hint: ");
+                this.console.println("You are in the Fields.\n Here's a hint: ");
                 break;
             case "S":
-                System.out.println("You are in the Storehouse.\n Here's a hint: ");
+                this.console.println("You are in the Storehouse.\n Here's a hint: ");
                 break;
             case "G":
-                System.out.println("You are in the Granary.\n Here's a hint: ");
+                this.console.println("You are in the Granary.\n Here's a hint: ");
                 break;
             case "R":
-                System.out.println("You are at the River.\n Here's a hint: ");
+                this.console.println("You are at the River.\n Here's a hint: ");
                 break;
             case "U":
-                System.out.println("You are in Undeveloped Land.\n Here's a hint: ");
+                this.console.println("You are in Undeveloped Land.\n Here's a hint: ");
                 break;
             case "B":
-                System.out.println("You are at the Lamanite Border.\n Here's a hint: ");
+                this.console.println("You are at the Lamanite Border.\n Here's a hint: ");
                 break;
             case "M":
                 return false;
@@ -104,6 +104,6 @@ public class MoveLocationView extends ViewBase{
     }
     
     private void loadSavedGame() {
-        System.out.println("** ***DO LATER thing2");
+        this.console.println("** ***DO LATER thing2");
     }
 }

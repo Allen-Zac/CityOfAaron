@@ -54,7 +54,7 @@ public class StartNewGameView extends ViewBase{
     @Override
     public boolean doAction(String[] inputs){
         if (inputs[0] == null || inputs[0].equals("")){
-            System.out.println("No player name entered. Returning to Main Menu.");
+            ErrorView.display(this.getClass().getName(), "No player name entered. Returning to Game Menu.");
             return false;
         }
         String playerName = inputs[0];
@@ -77,11 +77,11 @@ public class StartNewGameView extends ViewBase{
             game.createNewGame(player, theMap, theStorehouse);
         }
         catch (GameControlException ie) {
-            System.out.println(ie.getMessage());
+            this.console.println(ie.getMessage());
         }
         
-        System.out.println();
-        System.out.println("Welcome to the game, " + CityOfAaron.getCurrentGame().getThePlayer().getName() 
+        this.console.println();
+        this.console.println("Welcome to the game, " + CityOfAaron.getCurrentGame().getThePlayer().getName() 
                         + ".");
         
         GameMenuView gameMenu = new GameMenuView();

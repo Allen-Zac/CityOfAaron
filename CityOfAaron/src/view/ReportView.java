@@ -61,7 +61,7 @@ public class ReportView extends ViewBase{
     public boolean doAction(String[] inputs){
         switch (inputs[0].trim().toUpperCase()) {
             case "A":
-                System.out.println("You have 800 goats.");
+                this.console.println("You have 800 goats.");
                 break;
             case "T":
                 displayTools();
@@ -70,7 +70,7 @@ public class ReportView extends ViewBase{
                 displayProvisions();
                 break;
             case "G":
-                System.out.println("The authors of the game are Zac, Kayla, and Carson.");
+                this.console.println("The authors of the game are Zac, Kayla, and Carson.");
                 break;
             case "M":
                 gameMenu();
@@ -88,14 +88,14 @@ public class ReportView extends ViewBase{
     }
     
     private void displayTools() {
-        System.out.println("Shovel, Hoe, Rake, Hammer, Axe");
+        this.console.println("Shovel, Hoe, Rake, Hammer, Axe");
         
         Game game = CityOfAaron.getCurrentGame();
         game.getTheStorehouse().getTools();
     }
     
     private void displayProvisions() {
-        System.out.println("Wheat, Water, Seed, Fertilizer");
+        this.console.println("Wheat, Water, Seed, Fertilizer");
         
         Game game = CityOfAaron.getCurrentGame();
         game.getTheStorehouse().getProvisions();

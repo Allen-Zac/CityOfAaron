@@ -70,13 +70,13 @@ public class GameMenuView extends ViewBase {
                 viewTheMap();
                 break;
             case "M":
-                System.out.println("Coming Soon!");
+                this.console.println("Coming Soon!");
                 break;
             case "C":
-                viewTithing();
+                viewCrops();
                 break;
             case "L":
-                System.out.println("Coming Soon!");
+                this.console.println("Coming Soon!");
                 break;
             case "R":
                 reportsMenu();
@@ -100,6 +100,11 @@ public class GameMenuView extends ViewBase {
     private void viewTithing() {
         PayTithingView tithing = new PayTithingView();
         tithing.displayView();
+    }
+    
+    private void viewCrops() {
+        ManageTheCropsView crops = new ManageTheCropsView();
+        crops.displayView();
     }
     
     private void viewAnnualReport() {
