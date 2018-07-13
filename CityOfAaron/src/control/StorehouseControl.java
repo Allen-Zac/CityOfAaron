@@ -11,9 +11,27 @@ public class StorehouseControl {
     public static Storehouse storehouseTools() {
         Storehouse stores = new Storehouse();
         
-        InventoryItem[] tools = createTools();
+        InventoryItem[] tools = new InventoryItem[5];
+       
+        tools[0] = new InventoryItem("Shovel", 12);
+        tools[1] = new InventoryItem("Hoe", 14);
+        tools[2] = new InventoryItem("Rake", 18);
+        tools[3] = new InventoryItem("Hammer", 20);
+        tools[4] = new InventoryItem("Axe", 10);
         
         stores.setTools(tools);
+        
+        System.out.println("\n=======================\n"
+                + "Tools in the Storehouse\n"
+                + "=======================\n"
+                + "Name : Quantity\n"
+                + "-----------------------");
+        
+        for (InventoryItem inventoryItem : tools) {
+            System.out.println(String.format("%s%d", inventoryItem.getName() + " : ", inventoryItem.getQuantity()));
+            }
+        
+        System.out.println("\n");
         
         return stores;
     }

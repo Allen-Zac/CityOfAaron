@@ -1,3 +1,0 @@
-
-
-view.StartNewGameView - No player name entered. Returning to Game Menu.

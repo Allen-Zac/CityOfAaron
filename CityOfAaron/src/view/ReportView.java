@@ -8,6 +8,7 @@ package view;
 import cityofaaron.CityOfAaron;
 import control.StorehouseControl;
 import model.Game;
+import model.InventoryItem;
 import model.Storehouse;
 
 /**
@@ -91,22 +92,9 @@ public class ReportView extends ViewBase{
     }
     
     private void displayTools() {
-        this.console.println("\nTools in the Storehouse\n"
-                + "-----------------------\n"
-                + "Name   | Quantity\n"
-                + "-----------------------\n"
-                + "Shovel | 20\n"
-                + "Hammer | 12\n"
-                + "Hoe    | 7\n"
-                + "Axe    | 14\n");
-        
         StorehouseControl storehouseControl = new StorehouseControl();
-        Storehouse storehouse = new Storehouse();
-        CityOfAaron main = new CityOfAaron();
-        
-        for (int i = 0; i < 4; i++) {
-            this.console.println(main.currentGame.getTheStorehouse().getTools()); 
-        }
+     
+        storehouseControl.storehouseTools();
     }
     
     private void printTools() {
