@@ -8,8 +8,6 @@ package view;
 import cityofaaron.CityOfAaron;
 import control.StorehouseControl;
 import model.Game;
-import model.InventoryItem;
-import model.Storehouse;
 
 /**
  *
@@ -93,12 +91,12 @@ public class ReportView extends ViewBase{
     
     private void displayTools() {
         StorehouseControl storehouseControl = new StorehouseControl();
-     
         storehouseControl.storehouseTools();
     }
     
     private void printTools() {
-        this.console.println("Coming Soon.");
+        PrintToolFileView print = new PrintToolFileView();
+        print.displayView();
     }
     
     private void displayProvisions() {

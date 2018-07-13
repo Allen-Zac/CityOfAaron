@@ -1,5 +1,8 @@
 package control;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import model.Storehouse;
 import model.InventoryItem;
 
@@ -36,7 +39,8 @@ public class StorehouseControl {
         return stores;
     }
     
-    public static InventoryItem[] createTools() {
+    public static void printTools(String filePath) 
+    throws IOException {
         InventoryItem[] tools = new InventoryItem[5];
        
         tools[0] = new InventoryItem("Shovel", 12);
@@ -45,8 +49,28 @@ public class StorehouseControl {
         tools[3] = new InventoryItem("Hammer", 20);
         tools[4] = new InventoryItem("Axe", 10);
         
-        return tools;
+        try (PrintWriter report = new PrintWriter(new FileWriter(filePath))) {
+            report.println("*****************");
+            report.println("STOREHOUSE TOOLS");
+            report.println("*****************");
+            report.println();
+            
+            String formatString = "%-10s %-5d";
+            
+            report.println("Tool Name  Amnt.");
+            report.println("---------- -----");
+            
+            for (InventoryItem inventoryItem : tools) {
+                report.println(String.format(formatString, inventoryItem.getName(), inventoryItem.getQuantity()));
+            }
+            
+            report.println();
+            
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
     }
+    
     public static Storehouse storehouseAnimals() {
         Storehouse stores = new Storehouse();
         
