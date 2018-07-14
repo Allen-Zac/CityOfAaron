@@ -24,6 +24,7 @@ public class ReportView extends ViewBase{
         return  "Report Menu\n"
                 + "---------\n"
                 + "A - View animals in the storehouse.\n"
+                + "B - Print animals to a file.\n"
                 + "T - View tools in the storehouse.\n"
                 + "F - Print the tools to a file.\n"
                 + "P - View provisions in the storehouse\n"
@@ -63,6 +64,9 @@ public class ReportView extends ViewBase{
             case "A":
                 this.console.println("You have 800 goats.");
                 break;
+            case "B":
+                printAnimals();
+                break;
             case "T":
                 displayTools();
                 break;
@@ -87,6 +91,11 @@ public class ReportView extends ViewBase{
     private void gameMenu(){
         GameMenuView view = new GameMenuView();
         view.displayView(); 
+    }
+    
+    private void printAnimals() {
+        PrintAnimalFileView print = new PrintAnimalFileView();
+        print.displayView();
     }
     
     private void displayTools() {

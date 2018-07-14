@@ -74,11 +74,61 @@ public class StorehouseControl {
     public static Storehouse storehouseAnimals() {
         Storehouse stores = new Storehouse();
         
-        InventoryItem[] animals = createAnimals();
+        InventoryItem[] animals = new InventoryItem[5];
+       
+        animals[0] = new InventoryItem("Cow", 1);
+        animals[1] = new InventoryItem("Goat", 800);
+        animals[2] = new InventoryItem("Cat", 20000);
+        animals[3] = new InventoryItem("Sheep", 9);
+        animals[4] = new InventoryItem("Dog", 10);
         
-        stores.setAnimals(animals);
+        stores.setTools(animals);
+        
+        System.out.println("\n=======================\n"
+                + "Animals in the Storehouse\n"
+                + "=======================\n"
+                + "Name : Quantity\n"
+                + "-----------------------");
+        
+        for (InventoryItem inventoryItem : animals) {
+            System.out.println(String.format("%s%d", inventoryItem.getName() + " : ", inventoryItem.getQuantity()));
+            }
+        
+        System.out.println("\n");
         
         return stores;
+    }
+    
+    public static void printAnimals(String filePath) 
+    throws IOException {
+        InventoryItem[] animals = new InventoryItem[5];
+       
+        animals[0] = new InventoryItem("Cow", 1);
+        animals[1] = new InventoryItem("Goat", 800);
+        animals[2] = new InventoryItem("Cat", 20000);
+        animals[3] = new InventoryItem("Sheep", 9);
+        animals[4] = new InventoryItem("Dog", 10);
+        
+        try (PrintWriter report = new PrintWriter(new FileWriter(filePath))) {
+            report.println("*****************");
+            report.println("ANIMALS IN STOREHOUSE");
+            report.println("*****************");
+            report.println();
+            
+            String formatString = "%-10s %-5d";
+            
+            report.println("Animal Name  Amnt.");
+            report.println("---------- -----");
+            
+            for (InventoryItem inventoryItem : animals) {
+                report.println(String.format(formatString, inventoryItem.getName(), inventoryItem.getQuantity()));
+            }
+            
+            report.println();
+            
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
     }
     
     public static InventoryItem[] createAnimals() {

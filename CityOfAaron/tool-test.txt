@@ -1,0 +1,12 @@
+*****************
+STOREHOUSE TOOLS
+*****************
+
+Tool Name  Amnt.
+---------- -----
+Shovel     12   
+Hoe        14   
+Rake       18   
+Hammer     20   
+Axe        10   
+
