@@ -57,6 +57,30 @@ public class MapControl {
         coordinates[4][3] = new Location ("Lamanite Border", "The border to the Lamanites land.", "B");
         coordinates[4][4] = new Location ("Lamanite Border", "The border to the Lamanites land.", "B");
         
+        int x = 1;
+        
+        System.out.println("    0 | 1 | 2 | 3 | 4\n"
+                + "-----------------------");
+        
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (i == 0 && j == 0) {
+                    System.out.print(i + " | ");
+                }
+                
+                System.out.print(coordinates[i][j].getMapSymbol() + " | ");
+                
+                if (j == 4) {
+                    System.out.print("\n-----------------------\n");
+                }
+            }
+            if (i < 4)
+            System.out.print(x + " | ");
+            x++;
+        }
+        
+        System.out.println("\n");
+        
         return coordinates;
     } 
 }

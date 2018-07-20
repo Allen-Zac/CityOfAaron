@@ -1,5 +1,8 @@
 package view;
 
+import control.MapControl;
+import exceptions.MapControlException;
+
 /**
  *
  * @author Zac Allen
@@ -15,17 +18,7 @@ public class MapView extends ViewBase {
     
     @Override
     protected String getMessage() {
-        return  "    0 | 1 | 2 | 3 | 4\n"
-                + "--------------------\n"
-                + "0 | T | C | V | F | R \n"
-                + "--------------------\n"
-                + "1 | F | F | S | G | R \n"
-                + "--------------------\n"
-                + "2 | F | F | R | R | U \n"
-                + "--------------------\n"
-                + "3 | R | R | U | U | U \n"
-                + "--------------------\n"
-                + "4 | B | B | B | B | B \n\n";
+        return  "\n--------The Map--------\n";
     }
     
     /**
@@ -34,6 +27,9 @@ public class MapView extends ViewBase {
      */
     @Override
     public String[] getInputs() {
+        
+        displayMap();
+        
         return null;
     }
     
@@ -47,5 +43,15 @@ public class MapView extends ViewBase {
     @Override
     public boolean doAction(String[] inputs){
         return false;
+    }
+    
+    private void displayMap() {
+        MapControl map = new MapControl();
+        try {
+            map.createLocations(5, 5);
+        }
+        catch(MapControlException x) {
+            ErrorView.display(this.getClass().getName(), "Invalid rows and columns.");
+        }
     }
 }
