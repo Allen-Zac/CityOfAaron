@@ -15,14 +15,14 @@ public class AnnualReportView extends ViewBase {
     @Override
     protected String getMessage() {
         return "\nYear: 01\n"
-                + "People Starved: 50\n"
-                + "New Citizens: 20\n"
-                + "Current Population: 200\n"
-                + "Acres Owned: 100\n"
-                + "Bushels Per Acre: 7\n"
-                + "Bushels Paid in Tithes: 70\n"
-                + "Bushels Eaten by Rats: 31\n"
-                + "Bushels in Stores: 1200\n";
+                + "People Starved: 0\n"
+                + "New Citizens: 5\n"
+                + "Current Population: 100\n"
+                + "Acres Owned: 1000\n"
+                + "Bushels Per Acre: 3\n"
+                + "Bushels Paid in Tithes: 300\n"
+                + "Bushels Eaten by Rats: 0\n"
+                + "Bushels in Stores: 2700\n";
     }
 
     /**

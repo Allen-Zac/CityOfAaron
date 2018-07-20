@@ -18,11 +18,6 @@ public class GameMenuView extends ViewBase {
         super();
         
         viewAnnualReport();
-        
-        //Will eventually only run after the final year using some logic like
-        //if (year == 10) {finalUserRating();}, but for now, it will just display
-        //it.
-        finalUserRating();
     }
     
     @Override

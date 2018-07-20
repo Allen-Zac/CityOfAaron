@@ -59,7 +59,8 @@ public class MapControl {
         
         int x = 1;
         
-        System.out.println("    0 | 1 | 2 | 3 | 4\n"
+        System.out.println("  | "
+                + "0 | 1 | 2 | 3 | 4 |\n"
                 + "-----------------------");
         
         for (int i = 0; i < 5; i++) {

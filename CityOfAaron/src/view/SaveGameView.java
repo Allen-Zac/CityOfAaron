@@ -55,6 +55,7 @@ public class SaveGameView extends ViewBase {
             GameControl.saveGame(game, filePath);
         } catch(IOException e) {
             ErrorView.display(this.getClass().getName(), "Sorry, game was not saved.");
+            return false;
         }
         this.console.println("\nThe file has succesfully been saved to "
                 + inputs[0] + ".\n");
